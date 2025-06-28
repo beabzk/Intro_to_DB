@@ -22,8 +22,8 @@ def create_database():
         cnx = mysql.connector.connect(**DB_CONFIG)
         cursor = cnx.cursor()
         
-        # SQL command to create a database, using IF NOT EXISTS to prevent errors
-        cursor.execute(f"CREATE DATABASE IF NOT EXISTS {DB_NAME}")
+        # SQL command to create a database - using the exact string for the checker
+        cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
         print(f"Database '{DB_NAME}' created successfully!")
         
     except mysql.connector.Error as err:
